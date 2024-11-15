@@ -1,0 +1,4 @@
+/home/sami/git/nbody/cmake/build/CMakeFiles/nbody.dir
+/home/sami/git/nbody/cmake/build/CMakeFiles/nbody.out.dir
+/home/sami/git/nbody/cmake/build/CMakeFiles/edit_cache.dir
+/home/sami/git/nbody/cmake/build/CMakeFiles/rebuild_cache.dir
