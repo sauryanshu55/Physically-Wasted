@@ -34,14 +34,20 @@ nbody_integratef(float* const restrict x,
 
 }
 
+#define USE_OMP 0
+#if USE_OMP
 #include <omp.h>
+#endif
+
 void 
 nbody_stepf(float* const restrict x, 
             float* const restrict v,
             const float* const restrict m, 
             const size_t N, const float dt) {
         
+#if USE_OMP
         #pragma omp parallel for
+#endif
         for (size_t i = 0; i < N; i++) {
 
                 float dx[DIM];
