@@ -2,9 +2,9 @@ name: CMake Build
 
 on:
   push:
-    branches: [ main ]
+    branches: [ sami ]
   pull_request:
-    branches: [ main ]
+    branches: [ sami ]
 
 jobs:
   build:
