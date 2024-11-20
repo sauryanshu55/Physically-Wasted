@@ -1,5 +1,6 @@
 #include <bh.h>
 #include <global.h>
+#include <math.h>
 
 // TODO : test tree building !!
 
