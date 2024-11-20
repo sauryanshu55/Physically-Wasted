@@ -27,9 +27,9 @@ jobs:
       - name: Build
         run: |
           cd build
-          make .. 
+          make
 
       - name: Run tests
         run: |
-          cd build
+          cd build/tests/
           ctest --output-on-failure
