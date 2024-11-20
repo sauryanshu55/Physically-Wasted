@@ -4,7 +4,7 @@ import numpy as np
 dt = 0.0001
 t_max = 0.01
 
-N = 10000
+N = 1000 
 x = np.random.rand(3 * N).astype(np.float32)
 v = np.zeros(3 * N, dtype=np.float32)
 m = np.ones(N, dtype=np.float32)
@@ -32,7 +32,7 @@ bsize = 1
 ax.set_xlim(0, bsize)
 ax.set_ylim(0, bsize)
 
-scatter = ax.scatter(positions[:, 0], positions[:, 1], color='white', s=1)
+scatter = ax.scatter(positions[:, 0], positions[:, 1], color='white', s=m)
 
 def update(frame):
     pynbody.stepf(x, v, m, dt)
@@ -44,3 +44,4 @@ ani = FuncAnimation(fig, update, frames=np.arange(0, t_max, dt),
                     blit=True, interval=10)
 
 plt.show()
+
