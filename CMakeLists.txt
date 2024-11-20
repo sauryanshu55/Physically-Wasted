@@ -8,7 +8,7 @@ set(LIB_DIR ${CMAKE_SOURCE_DIR}/lib)
 set(INC_DIR ${CMAKE_SOURCE_DIR}/include)
 set(TEST_DIR ${CMAKE_SOURCE_DIR}/tests)
 
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O3 -fopenmp -Wall -Wextra -Wpedantic -Werror")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O3 -Wall -Wextra -Wpedantic -Werror")
 
 if(WIN32)
     set(LIB_SUFFIX ".dll")
