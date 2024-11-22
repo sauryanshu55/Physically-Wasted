@@ -4,7 +4,7 @@ target_precompile_headers(tests INTERFACE test.h)
 function(add_nbody_test TEST_NAME SOURCE_FILE)
   add_executable(${TEST_NAME} ${SOURCE_FILE})
   target_include_directories(${TEST_NAME} PRIVATE ${INC_DIR})
-  target_link_libraries(${TEST_NAME} PRIVATE tests)
+  target_link_libraries(${TEST_NAME} PRIVATE m tests)
   add_test(NAME ${TEST_NAME} COMMAND ${TEST_NAME})
 endfunction()
 

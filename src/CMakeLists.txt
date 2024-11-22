@@ -9,7 +9,7 @@ set_target_properties(${LIBRARY_NAME} PROPERTIES
 )
 
 add_executable(${EXECUTABLE_NAME} ${SRC_DIR}/main.c)
-target_link_libraries(${EXECUTABLE_NAME} PRIVATE ${LIBRARY_NAME})
+target_link_libraries(${EXECUTABLE_NAME} PRIVATE m ${LIBRARY_NAME})
 
 set_target_properties(${EXECUTABLE_NAME} PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY ${BIN_DIR}
