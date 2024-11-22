@@ -1,47 +1,27 @@
 import pynbody
 import numpy as np
 
-dt = 0.0001
-t_max = 0.01
+def run_simulation(N, dt, t_max):
+    """
+    Runs the n-body simulation and returns the positions of particles at each time step.
 
-N = 1000 
-x = np.random.rand(3 * N).astype(np.float32)
-v = np.zeros(3 * N, dtype=np.float32)
-m = np.ones(N, dtype=np.float32)
+    Args:
+        N (int): Number of particles.
+        dt (float): Time step.
+        t_max (float): Maximum simulation time.
 
-import matplotlib.pyplot as plt
-from matplotlib.animation import FuncAnimation
+    Returns:
+        list: A list of frames where each frame contains (x, y) positions of particles.
+    """
+    # Initialize positions, velocities, and masses
+    x = np.random.rand(3 * N).astype(np.float32)
+    v = np.zeros(3 * N, dtype=np.float32)
+    m = np.ones(N, dtype=np.float32)
 
-positions = x.reshape(-1, 3)
+    frames = []  # To store particle positions over time
+    for t in np.arange(0, t_max, dt):
+        pynbody.stepf(x, v, m, dt)  # Perform a single simulation step
+        positions = x.reshape(-1, 3)
+        frames.append(positions[:, :2].tolist())  # Store (x, y) positions only
 
-fcolor = 'white'
-plt.style.use('classic')
-plt.rcParams.update({'text.color': fcolor, 
-                     'axes.labelcolor': fcolor,
-                     'axes.edgecolor': fcolor,
-                     'xtick.color': fcolor,
-                     'ytick.color': fcolor,
-                     'font.family': 'serif'})
-
-fig, ax = plt.subplots()
-fig.patch.set_facecolor('black')
-ax.set_facecolor('black')
-ax.set_aspect('equal', 'box')
-
-bsize = 1
-ax.set_xlim(0, bsize)
-ax.set_ylim(0, bsize)
-
-scatter = ax.scatter(positions[:, 0], positions[:, 1], color='white', s=m)
-
-def update(frame):
-    pynbody.stepf(x, v, m, dt)
-    positions = x.reshape(-1, 3)
-    scatter.set_offsets(positions[:, :2])
-    return scatter,
-
-ani = FuncAnimation(fig, update, frames=np.arange(0, t_max, dt),
-                    blit=True, interval=10)
-
-plt.show()
-
+    return frames
