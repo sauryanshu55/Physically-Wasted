@@ -1,0 +1,5 @@
+Flask==2.3.3             # Flask web framework
+numpy==1.26.0            # For numerical computations
+matplotlib==3.8.0        # Optional, used in standalone visualization
+plotly==5.17.0           # For dynamic frontend animations (optional for backend)
+Flask-Cors==3.0.10       # For handling CORS if frontend/backend run on different origins
