@@ -31,7 +31,7 @@ def update(frame):
     return scatter,
 
 root = tk.Tk()
-root.title("Particle Simulation")
+root.title("N-Body Problem")
 
 
 canvas = FigureCanvasTkAgg(fig, master=root)
