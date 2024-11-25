@@ -18,5 +18,5 @@ make
 To run the program, run the command:
 
 ```bash
-python3 nbody.py
+python3 gui.py
 ```
