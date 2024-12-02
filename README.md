@@ -8,7 +8,7 @@ This is the repository for 324 Group Project for GroupC - Physically Wasted.
 
 OR 
 ```bash
-$ ./gui.py
+$ ./gui
 ```
 
 # Compilation (For Devs)
