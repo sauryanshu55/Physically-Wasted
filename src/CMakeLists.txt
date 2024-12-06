@@ -1,8 +1,7 @@
 set(SOURCE_FILE ${SRC_DIR}/nbody.c ${SRC_DIR}/bh.c)
 set(EXECUTABLE_NAME nbody.out)
-set(LIBRARY_NAME nbody)
 
-# Create a shared library
+set(LIBRARY_NAME nbody)
 add_library(${LIBRARY_NAME} SHARED ${SOURCE_FILE})
 set_target_properties(${LIBRARY_NAME} PROPERTIES
     SUFFIX ${LIB_SUFFIX}

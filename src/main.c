@@ -9,7 +9,7 @@ int
 main(void) {
 
         const size_t N = 5000;
-        const float dt = 0.0001f;
+        const float dt = 0.1;
         const float t_max = 0.01f;
 
         float* x = (float*)malloc(3 * N * sizeof(float));

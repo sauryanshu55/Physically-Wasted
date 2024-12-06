@@ -3,6 +3,9 @@
 
 #include <stddef.h>
 
+float 
+nbody_getr2f(const float* const dx);
+
 void 
 nbody_stepf(float* const restrict x, 
             float* const restrict v,
